@@ -1,20 +1,19 @@
 import { ContractData, GoogleConfig, CarConfig, ContractField, CustomerRecord } from "../types";
 
 declare var google: any;
-declare var process: any;
 
 const GOOGLE_CONFIG_KEY = 'the_nam_google_config';
 const TOKEN_STORAGE_KEY = 'the_nam_google_access_token_v3'; 
 
 // --- CẤU HÌNH TỰ ĐỘNG LẤY TỪ .ENV (FALLBACK) ---
-// Nếu không có env thì fallback về chuỗi rỗng
-const ENV_API_KEY = process?.env?.API_KEY || '';
-const ENV_CLIENT_ID = process?.env?.GOOGLE_CLIENT_ID || '';
-const ENV_CLIENT_SECRET = process?.env?.GOOGLE_CLIENT_SECRET || '';
-const ENV_REFRESH_TOKEN = process?.env?.GOOGLE_REFRESH_TOKEN || '';
-const ENV_SPREADSHEET_ID = process?.env?.GOOGLE_SPREADSHEET_ID || '';
-const ENV_FOLDER_ID = process?.env?.GOOGLE_DRIVE_FOLDER_ID || '';
-const ENV_TEMPLATE_ID = process?.env?.GOOGLE_DOC_TEMPLATE_ID || '';
+// Vite sẽ replace process.env.* tại build time
+const ENV_API_KEY = process.env.API_KEY || '';
+const ENV_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || '';
+const ENV_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || '';
+const ENV_REFRESH_TOKEN = process.env.GOOGLE_REFRESH_TOKEN || '';
+const ENV_SPREADSHEET_ID = process.env.GOOGLE_SPREADSHEET_ID || '';
+const ENV_FOLDER_ID = process.env.GOOGLE_DRIVE_FOLDER_ID || '';
+const ENV_TEMPLATE_ID = process.env.GOOGLE_DOC_TEMPLATE_ID || '';
 
 // Config mặc định (chỉ dùng khi reset)
 const DEFAULT_CONFIG: GoogleConfig = {
