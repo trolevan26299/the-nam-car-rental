@@ -1,0 +1,5 @@
+{
+  "name": "The Nam Car Rental",
+  "description": "A smart car rental contract management system using Gemini AI for OCR extraction of Vietnamese ID cards (CCCD).",
+  "requestFramePermissions": []
+}
